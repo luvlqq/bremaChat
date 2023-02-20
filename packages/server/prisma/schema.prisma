@@ -8,7 +8,7 @@ datasource db {
 }
 
 model UserModel {
-  login          String   @unique @default(uuid())
+  login          String   @unique
   hashedPassword String
   createdAt      DateTime @default(now())
   updateAt       DateTime @updatedAt()
