@@ -25,6 +25,6 @@ export class AuthDto {
   @IsNotEmpty({ message: IS_NOT_EMPTY })
   @MinLength(8, { message: MIN_LENGTH_PASSWORD })
   @MaxLength(27, { message: MAX_LENGTH_PASSWORD })
-  @Matches('^[a-zA-Z\\s]+$', undefined, { message: MATCHES }) // matches - роверка на совпадения регулярки. т.е. тут только алфовит
+  @Matches('^[0-9a-zA-Z!@#$%^&*]+$', undefined, { message: MATCHES }) // matches - роверка на совпадения регулярки. т.е. тут только алфовит
   password: string;
 }

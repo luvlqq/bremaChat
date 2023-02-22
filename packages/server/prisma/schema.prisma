@@ -8,8 +8,17 @@ datasource db {
 }
 
 model UserModel {
-  login          String   @unique
+  login          String         @unique
   hashedPassword String
-  createdAt      DateTime @default(now())
-  updateAt       DateTime @updatedAt()
+  createdAt      DateTime       @default(now())
+  updateAt       DateTime       @updatedAt()
+  MessageModel   MessageModel[]
+}
+
+model MessageModel {
+  messageId     Int       @unique @default(autoincrement())
+  messageText   String
+  Author        UserModel @relation(fields: [messageAuthor], references: [login])
+  messageAuthor String
+  sendAt        DateTime  @default(now())
 }
