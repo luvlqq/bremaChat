@@ -1,74 +1,73 @@
-import './loginScreen.css'
-import React, {useState} from "react";
-import axios from 'axios'
-import {useMutation} from 'react-query'
-import Chatscreen from './chat-screen/Chatscreen.js';
+import './loginScreen.css';
+import React, { useState } from "react";
+import axios from 'axios';
+import { useMutation } from 'react-query';
 
 
-const API_URL = 'http://localhost:4200/api'
+const API_URL = 'http://localhost:4200/api';
 
-/* function App(){
-    const[email,setEmail] = useState ('')
-    const[password,setPassword] = useState ('')
 
-    const [user,setUser] = useState (null)
-    const {mutate, isLoading} = useMutation(
+function App() {
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const [user, setUser] = useState(null);
+    const { mutate, isLoading, isError, error } = useMutation(
         'login',
-        ()=>
-            axios.post(
+        async () => {
+            const response = await axios.post(
                 `${API_URL}/auth/login`,
-                {email, password},
-                {
-                    headers: {'Content-Type':
-                            'application/json'}
-                }
-            ),
+                { login, password },
+                { headers: { 'Content-Type': 'application/json' } }
+            );
+            return response.data;
+        },
         {
-            onSuccess: ({data}) => {
-                setUser(data.user)
+            onSuccess: (data) => {
+                setUser(data.user);
             },
         }
+    );
 
-    )
- */
-   function App(){     
-    return(
 
-        <div className='App'>
-            <Chatscreen/>
-        </div>
-     /*    <div className = 'login'>
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        mutate();
+    };
+
+    return (
+        <div className='login'>
             <div className='form'>
-                <div className = 'text'> BremaChat</div>
+                <div className='text'> &#x1F47D; BremaChat </div>
                 <div className='line'></div>
 
-
-                <form className= 'login-form'>
-                    <div className = "log"> Login</div>
+                <form className='login-form' onSubmit={handleFormSubmit}>
+                    <div className='log'> Login</div>
                     <input
                         type='text'
                         required
-                        pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
-                        value={email}
-                        onChange = {e => setEmail(e.target.value)}
+                        value={login}
+                        onChange={(e) => setLogin(e.target.value)}
                     />
-                    <div className = "pass">Password</div>
+                    <div className='pass'>Password</div>
                     <input
-                        type = 'password'
+                        type='password'
                         required
                         value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button onClick = {() => mutate()}
-                            disabled={isLoading}>Login</button>
-
+                    <button disabled={isLoading}>Login</button>
+                    {isError && <div className='error'>{error.message}</div>}
                 </form>
-
+                {user && (
+                    <div className='success'>
+                        Login successful. Welcome, {user.username}!
+                    </div>
+                )}
             </div>
         </div>
- */         
 
-        
     );
 }
 
