@@ -1,11 +1,13 @@
-import './/loginScreen.css'
+import './loginScreen.css'
 import React, {useState} from "react";
 import axios from 'axios'
 import {useMutation} from 'react-query'
+import Chatscreen from './chat-screen/Chatscreen.js';
+
 
 const API_URL = 'http://localhost:4200/api'
 
-function App(){
+/* function App(){
     const[email,setEmail] = useState ('')
     const[password,setPassword] = useState ('')
 
@@ -28,11 +30,14 @@ function App(){
         }
 
     )
-
+ */
+   function App(){     
     return(
 
-
-        <div className = 'login'>
+        <div className='App'>
+            <Chatscreen/>
+        </div>
+     /*    <div className = 'login'>
             <div className='form'>
                 <div className = 'text'> BremaChat</div>
                 <div className='line'></div>
@@ -61,7 +66,10 @@ function App(){
 
             </div>
         </div>
+ */         
 
-    )
+        
+    );
 }
-export default App
+
+export default App;
