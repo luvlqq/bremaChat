@@ -1,0 +1,76 @@
+/* @import url('https://fonts.googleapis.com/css2?famaly=Comfotaa&display=swap');
+body {
+    background: #d0d0d0;
+    overflow-y: hidden;
+}
+.login{
+    width: 360px;
+    padding: 8% 0 0;
+    margin:auto;
+
+}
+
+.form{
+    position: relative;
+    background: #ffffff;
+    width: 656px;
+    height: 600px;
+    border-radius: 20px;
+    top:-70px;
+    left:-170px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.form input {
+    background: #ffffff;
+    width: 300px;
+    height: 32px;
+    border: 1px solid #818182;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: inset 1px 0 0 #E5E5EA;
+    margin-bottom: 20px;
+
+
+
+}
+
+.form button{
+    font-style: normal;
+    margin: 260px;
+    font-weight: 400;
+    font-size: 15px;
+    align-items: center;
+    background: #007aff;
+    width: 111px;
+    height: 29px;
+    color: #ffffff;
+    display: flex;
+
+}
+
+.log{
+    font-style: normal;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #2C2C2E;
+
+}
+.pass{
+    padding: 10px;
+    margin-bottom: -5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2C2C2E;
+}
+.line {
+    border-bottom: 1px solid #f00;
+    width: 670px;
+}
+ */
