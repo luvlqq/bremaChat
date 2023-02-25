@@ -3,14 +3,11 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useMutation } from 'react-query';
 
-
 const API_URL = 'http://localhost:4200/api';
-
 
 function App() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
-
 
     const [user, setUser] = useState(null);
     const { mutate, isLoading, isError, error } = useMutation(
@@ -29,7 +26,6 @@ function App() {
             },
         }
     );
-
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -67,7 +63,6 @@ function App() {
                 )}
             </div>
         </div>
-
     );
 }
 
