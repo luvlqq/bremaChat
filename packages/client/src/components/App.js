@@ -1,74 +1,20 @@
-import './loginScreen.css'
-import React, {useState} from "react";
-import axios from 'axios'
-import {useMutation} from 'react-query'
-import Chatscreen from './Chatscreen.js';
+import { BrowserRouter, Route } from 'react-router-dom';
+import LoginScreen from "./authScreen/loginScreen";
+import RegistrationScreen from "./registrationScreen/registrationScreen";
 
 
-const API_URL = 'http://localhost:4200/api'
+// import Chatscreen from "./chat-screen/Chatscreen";
 
-/* function App(){
-    const[email,setEmail] = useState ('')
-    const[password,setPassword] = useState ('')
+function App() {
+    return (
 
-    const [user,setUser] = useState (null)
-    const {mutate, isLoading} = useMutation(
-        'login',
-        ()=>
-            axios.post(
-                `${API_URL}/auth/login`,
-                {email, password},
-                {
-                    headers: {'Content-Type':
-                            'application/json'}
-                }
-            ),
-        {
-            onSuccess: ({data}) => {
-                setUser(data.user)
-            },
-        }
+        <BrowserRouter>
+            <Route exact path="/login" component={LoginScreen} />
+            <Route exact path="/register" component={RegistrationScreen} />
+            {/*<Route exact path="/bremaChat" component={Chatscreen} />*/}
 
-    )
- */
-   function App(){     
-    return(
+        </BrowserRouter>
 
-        <div className='App'>
-            <Chatscreen/>
-        </div>
-     /*    <div className = 'login'>
-            <div className='form'>
-                <div className = 'text'> BremaChat</div>
-                <div className='line'></div>
-
-
-                <form className= 'login-form'>
-                    <div className = "log"> Login</div>
-                    <input
-                        type='text'
-                        required
-                        pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
-                        value={email}
-                        onChange = {e => setEmail(e.target.value)}
-                    />
-                    <div className = "pass">Password</div>
-                    <input
-                        type = 'password'
-                        required
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                    <button onClick = {() => mutate()}
-                            disabled={isLoading}>Login</button>
-
-                </form>
-
-            </div>
-        </div>
- */         
-
-        
     );
 }
 

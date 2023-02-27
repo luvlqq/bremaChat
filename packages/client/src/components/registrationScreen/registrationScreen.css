@@ -4,7 +4,7 @@ body {
     overflow-y: hidden;
 }
 
-.login {
+.registration {
     width: 360px;
     padding: 8% 0 0;
     margin: auto;
@@ -45,8 +45,16 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 250px;
+    bottom: 120px;
     border-radius: 5px;
+}
+.register-form {
+    margin-top: 150px;
+}
+.log, .pass {
+    text-align: left;
+    margin-left: 188px;
+    margin-bottom: 5px;
 }
 
 .line {
@@ -55,22 +63,17 @@ body {
     margin: 10px -20px;
 }
 
-.login-form {
-    margin-top: 150px;
-}
-
-.log, .pass {
-    text-align: left;
-    margin-left: 188px;
-    margin-bottom: 5px;
-}
-
 .form button:active {
     background-color: #0055ff;
     box-shadow: inset 0 0 10px #fff;
 }
 
-.register{
-    padding: 200px;
+.error {
+    color: #ff0000;
+    margin-top: 10px;
 }
 
+.success {
+    color: #00cc00;
+    margin-top: 10px;
+}

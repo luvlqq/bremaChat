@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './components/authScreen/App';
+import RegistrationScreen from "./components/registrationScreen/registrationScreen";
+
 import {QueryClient, QueryClientProvider} from 'react-query'
 
 
@@ -12,7 +13,7 @@ const queryClient = new QueryClient()
 root.render(
     <React.StrictMode>
         <QueryClientProvider client = {queryClient}>
-            <App/>
+            <RegistrationScreen/>
         </QueryClientProvider>
     </React.StrictMode>
 )
