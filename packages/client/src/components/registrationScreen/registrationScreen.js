@@ -2,13 +2,15 @@ import './registrationScreen.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useMutation } from 'react-query';
+import * as PropTypes from "prop-types";
 
 
 
-const API_URL = 'http://localhost:4200/api';
+const API_URL = 'http://localhost:3000';
+
 
 function RegistrationScreen() {
-    const [username, setUsername] = useState('');
+    const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
@@ -18,7 +20,7 @@ function RegistrationScreen() {
         async () => {
             const response = await axios.post(
                 `${API_URL}/auth/register`,
-                { username, password },
+                { login, password },
                 { headers: { 'Content-Type': 'application/json' } }
             );
             return response.data;
@@ -51,8 +53,8 @@ function RegistrationScreen() {
                     <input
                         type='text'
                         required
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={login}
+                        onChange={(e) => setLogin(e.target.value)}
                     />
                     <div className='pass'>Password</div>
                     <input
@@ -79,7 +81,7 @@ function RegistrationScreen() {
 
                 )}
                 <div className='login'>
-                    Есть аккаунт? <a href="/login">Login</a>
+                    Есть аккаунт? <a href ="/login">Login</a>
                 </div>
             </div>
         </div>

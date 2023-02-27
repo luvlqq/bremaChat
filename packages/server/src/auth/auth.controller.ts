@@ -13,6 +13,7 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() dto: AuthDto, @Req() req, @Res() res) {
+    console.log('est');
     return this.authService.login(dto, req, res);
   }
 

@@ -6,13 +6,13 @@ import { useMutation } from 'react-query';
 
 
 
-const API_URL = 'http://localhost:4200/api';
+const API_URL = 'http://localhost:3000';
 
 function LoginScreen() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState('');
     const { mutate, isLoading, isError, error } = useMutation(
         'login',
         async () => {
