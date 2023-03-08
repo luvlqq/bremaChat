@@ -1,19 +1,28 @@
 .chat-screen{
-background-color: rgb(197, 203, 203);
+min-height: 100%;
+background-color: rgb(242, 242, 242);
 display: flex;
 width: 60%;
 margin-left: auto;
 margin-right: auto;
 min-height: 100vh;
 border-radius: 12px;
+flex-direction: column;
+border: 1px solid black;
 }
 .chat-screen__chatname{
     display: flex;
     max-height: 10vh;
-    border-bottom:2px solid black;
+    border-bottom:2px solid rgb(165, 165, 165);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
-.chat-screen__chatfield{
 
+.chat-screen__chatfield{
+    background-color: #fff;
+    height: 820px;
+    border-bottom:2px solid rgb(165, 165, 165);
 }
 .chat-screen__textfield{
 
