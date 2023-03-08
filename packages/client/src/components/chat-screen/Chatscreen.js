@@ -4,15 +4,15 @@ function Chatscreen(){
         <div className='chat-screen'>
 
         <div className='chat-screen__chatname'>
-        <p>Team Ka4elya</p>
+        <p><span role="img" aria-label="sheep">👾</span>Team Ka4elya</p>
         </div>
 
         <div className='chat-screen__chatfield'>
-
+            <div>LOremLOremLOremLOremLOremLOremLOremLOrem</div>
         </div>
 
         <div className='chat-screen__textfield'>
-        
+
         </div>
 
     </div>
